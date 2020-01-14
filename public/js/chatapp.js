@@ -51,7 +51,7 @@ $messageSend.addEventListener("submit", (e) => {
     document.getElementById("message").classList.add("wrong-message");
   } else {
     $messageSendButton.setAttribute("disabled", "disabled");
-    socket.emit("sendMessage", message, () => {
+    socket.emit("sendMessage", message, pseudoUser, () => {
       $messageSendInput.value = "";
       $messageSendInput.focus();
       $messageSendButton.removeAttribute("disabled");

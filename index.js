@@ -142,8 +142,8 @@ io.on("connection", (socket) => {
   /*
     message reçu du client et l'envois a tous les utilisateurs
   */
-  socket.on("sendMessage", (message, callback) => {
-    io.emit("newMessage", sendingMessages(message));
+  socket.on("sendMessage", (message, pseudoUser, callback) => {
+    io.emit("newMessage", sendingMessages(message, pseudoUser));
     callback();
   });
   /* 
