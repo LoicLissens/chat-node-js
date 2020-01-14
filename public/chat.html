@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="css/style.min.css" />
+    <title>Chat becode</title>
+  </head>
+  <body>
+    <h1>Chat app becode</h1>
+
+    <section class="chat-container">
+      <p id="user-online"></p>
+      <div id="chat-rendered"></div>
+      <div class="interaction-button">
+        <form id="message-send">
+          <input id="message" placeholder="Votre message" />
+          <button class="chat-button">Envoyer</button>
+        </form>
+        <button class="chat-button" id="location">Partager ma localisation !</button>
+        <form action="/disconnect" method="POST">
+          <button class="chat-button">disconect</button>
+        </form>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chatapp.js"></script>
+  </body>
+</html>
