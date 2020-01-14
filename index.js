@@ -4,7 +4,7 @@
 const express = require("express"); // initialisation des require nodeJs
 const http = require("http");
 const socketio = require("socket.io");
-const port = 500;
+const port = process.env.PORT || 3000;
 const { sendingMessages } = require("./src/utils/messages");
 const MongoClient = require("mongodb").MongoClient;
 const uri = "mongodb+srv://Becode:Becode@cluster0-bue7i.gcp.mongodb.net/test?retryWrites=true&w=majority";
@@ -132,8 +132,6 @@ let userCount = 0;
 
 // A l'évenement 'connection' d'un utilisateur la fonction va ...
 io.on("connection", (socket) => {
-  
-
   console.log("Nouvel utilisateur connecté");
   userCount++;
   io.emit("userCountAdd", userCount); // a l'évenement connection le serveur va envoyer (emit()) au client un évenement 'userCountAdd' et la let userCount
