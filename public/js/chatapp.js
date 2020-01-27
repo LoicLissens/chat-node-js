@@ -27,7 +27,7 @@ socket.on("userLeft", (userCount, leftUserMessage) => {
   insertMessage(leftUserMessage);
   document.getElementById("user-online").innerHTML = `Il y a  ${userCount} utilisateur en ligne`;
 });
-// display le message reçu du serveur, l'arg message est une fct retournant un objet contenan le message et la date
+// display le message reçu du serveur, l'arg message est une fct retournant un objet contenan le message et la date et pseudo
 socket.on("newMessage", (message) => {
   console.log(message);
   insertMessage(message);
